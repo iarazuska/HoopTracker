@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- Pantalla de inicio que muestra accesos directos a las secciones y el botón de cambiar tema. -->
+
+    <ImageButton
+        android:id="@+id/btnThemeToggle"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="end"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/bg_theme_toggle"
+        android:contentDescription="@string/cambiar_tema"
+        android:padding="4dp"
+        android:scaleType="centerInside"
+        android:tint="?attr/colorOnPrimary"
+        android:src="@drawable/ic_dark_mode" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnHomeMatches"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ver_partidos"
+        android:layout_marginBottom="16dp"
+        app:backgroundTint="?attr/colorPrimary"
+        app:strokeColor="@android:color/transparent"
+        android:textColor="?attr/colorOnPrimary"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnHomeTeams"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ver_equipos"
+        android:layout_marginBottom="16dp"
+        app:backgroundTint="?attr/colorPrimary"
+        android:textColor="?attr/colorOnPrimary"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnHomePlayers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ver_jugadores"
+        android:layout_marginBottom="16dp"
+        app:backgroundTint="?attr/colorPrimary"
+        android:textColor="?attr/colorOnPrimary"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnHomeTournaments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ver_torneos"
+        android:layout_marginBottom="24dp"
+        app:backgroundTint="?attr/colorPrimary"
+        android:textColor="?attr/colorOnPrimary"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cambiar_de_usuario"
+        android:textColor="?attr/colorOnPrimary"
+        app:backgroundTint="?attr/colorPrimary"/>
+</LinearLayout>

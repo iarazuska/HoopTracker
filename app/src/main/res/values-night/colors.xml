@@ -1,0 +1,16 @@
+<resources>
+
+    <color name="orange_primary">#FFA64D</color>
+    <color name="orange_dark">#FF8C00</color>
+    <color name="orange_light">#FFBF80</color>
+
+    <color name="black">#FF000000</color>
+    <color name="black_soft">#FF0A0A0A</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="white_soft">#FFEAEAEA</color>
+
+    <color name="gray_dark">#FF111111</color>
+    <color name="gray_medium">#FF333333</color>
+    <color name="gray_light">#FF555555</color>
+
+</resources>

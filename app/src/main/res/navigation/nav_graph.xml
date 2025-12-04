@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.hooptracker.ui.auth.SplashFragment"
+        android:label="Splash"
+        tools:layout="@layout/fragment_splash">
+
+        <action
+            android:id="@+id/action_splash_to_login"
+            app:destination="@id/loginFragment" />
+
+        <action
+            android:id="@+id/action_splash_to_matchList"
+            app:destination="@id/matchListFragment" />
+
+        <action
+            android:id="@+id/action_splash_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.hooptracker.ui.auth.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+
+        <action
+            android:id="@+id/action_login_to_register"
+            app:destination="@id/registerFragment" />
+
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.hooptracker.ui.auth.RegisterFragment"
+        android:label="Registro"
+        tools:layout="@layout/fragment_register">
+
+        <action
+            android:id="@+id/action_register_to_matchList"
+            app:destination="@id/matchListFragment" />
+
+        <action
+            android:id="@+id/action_register_to_login"
+            app:destination="@id/loginFragment" />
+
+        <action
+            android:id="@+id/action_register_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.hooptracker.ui.home.HomeFragment"
+        android:label="Inicio"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_homeFragment_to_matchListFragment"
+            app:destination="@id/matchListFragment" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_teamListFragment"
+            app:destination="@id/teamListFragment" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_playerListFragment"
+            app:destination="@id/playerListFragment" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_tournamentListFragment"
+            app:destination="@id/tournamentListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/matchListFragment"
+        android:name="com.example.hooptracker.ui.matchlist.MatchListFragment"
+        android:label="Partidos"
+        tools:layout="@layout/fragment_match_list">
+
+        <action
+            android:id="@+id/action_matchListFragment_to_matchCreateFragment"
+            app:destination="@id/matchCreateFragment" />
+
+        <action
+            android:id="@+id/action_matchListFragment_to_matchLiveFragment"
+            app:destination="@id/matchLiveFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/matchCreateFragment"
+        android:name="com.example.hooptracker.ui.match.MatchCreateFragment"
+        android:label="Nuevo partido"
+        tools:layout="@layout/fragment_match_create">
+
+        <action
+            android:id="@+id/action_matchCreateFragment_to_matchLiveFragment"
+            app:destination="@id/matchLiveFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/matchLiveFragment"
+        android:name="com.example.hooptracker.ui.match.MatchLiveFragment"
+        android:label="Marcador en vivo"
+        tools:layout="@layout/fragment_match_live">
+
+        <argument
+            android:name="matchId"
+            app:argType="long" />
+
+        <action
+            android:id="@+id/action_matchLiveFragment_to_matchSummaryFragment"
+            app:destination="@id/matchSummaryFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/matchSummaryFragment"
+        android:name="com.example.hooptracker.ui.match.MatchSummaryFragment"
+        android:label="Resumen partido"
+        tools:layout="@layout/fragment_match_summary">
+
+        <argument
+            android:name="matchId"
+            app:argType="long" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/teamListFragment"
+        android:name="com.example.hooptracker.ui.team.TeamListFragment"
+        android:label="Equipos"
+        tools:layout="@layout/fragment_team_list">
+
+        <action
+            android:id="@+id/action_teamListFragment_to_teamDetailFragment"
+            app:destination="@id/teamDetailFragment" />
+
+        <action
+            android:id="@+id/action_teamListFragment_to_playerListFragment"
+            app:destination="@id/playerListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/teamDetailFragment"
+        android:name="com.example.hooptracker.ui.team.TeamDetailFragment"
+        android:label="Equipo"
+        tools:layout="@layout/fragment_team_detail">
+
+        <argument
+            android:name="teamId"
+            app:argType="long" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/playerListFragment"
+        android:name="com.example.hooptracker.ui.player.PlayerListFragment"
+        android:label="Jugadores"
+        tools:layout="@layout/fragment_player_list">
+
+        <argument
+            android:name="teamId"
+            app:argType="long" />
+
+        <argument
+            android:name="teamName"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action_playerListFragment_to_playerDetailFragment"
+            app:destination="@id/playerDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/playerDetailFragment"
+        android:name="com.example.hooptracker.ui.player.PlayerDetailFragment"
+        android:label="Jugador"
+        tools:layout="@layout/fragment_player_detail">
+
+        <argument
+            android:name="teamId"
+            app:argType="long" />
+
+        <argument
+            android:name="playerId"
+            app:argType="long" />
+
+        <argument
+            android:name="mode"
+            app:argType="string"
+            android:defaultValue="view" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/tournamentListFragment"
+        android:name="com.example.hooptracker.ui.tournament.TournamentListFragment"
+        android:label="Torneos"
+        tools:layout="@layout/fragment_tournament_list">
+
+        <action
+            android:id="@+id/action_tournamentListFragment_to_tournamentDetailFragment"
+            app:destination="@id/tournamentDetailFragment"/>
+
+        <action
+            android:id="@+id/action_tournamentListFragment_to_tournamentCreateFragment"
+            app:destination="@id/tournamentCreateFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/tournamentDetailFragment"
+        android:name="com.example.hooptracker.ui.tournament.TournamentDetailFragment"
+        android:label="Torneo"
+        tools:layout="@layout/fragment_tournament_detail">
+
+        <argument
+            android:name="tournamentId"
+            app:argType="long" />
+
+        <action
+            android:id="@+id/action_tournamentDetailFragment_to_matchCreateFragment"
+            app:destination="@id/matchCreateFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/tournamentCreateFragment"
+        android:name="com.example.hooptracker.ui.tournament.TournamentCreateFragment"
+        android:label="Crear Torneo"
+        tools:layout="@layout/fragment_tournament_create"/>
+
+    <fragment
+        android:id="@+id/statsFragment"
+        android:name="com.example.hooptracker.ui.stats.StatsFragment"
+        android:label="Estadísticas globales"
+        tools:layout="@layout/fragment_stats" />
+
+</navigation>

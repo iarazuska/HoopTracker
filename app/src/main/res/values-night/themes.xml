@@ -1,0 +1,17 @@
+<resources>
+
+    <style name="Theme.HoopTracker" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <item name="colorPrimary">@color/orange_primary</item>
+        <item name="colorPrimaryVariant">@color/orange_dark</item>
+        <item name="colorOnPrimary">@color/black</item>
+
+        <item name="android:windowBackground">@color/black_soft</item>
+        <item name="colorSurface">@color/gray_dark</item>
+        <item name="colorOnSurface">@color/white</item>
+
+        <item name="colorAccent">@color/orange_primary</item>
+
+    </style>
+
+</resources>
